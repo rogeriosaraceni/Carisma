@@ -1,0 +1,39 @@
+<form method="" action="/painel/">
+    <div class="mb-4">
+        <label class="w-100">
+            <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-control py-2"
+                placeholder="e-mail"
+                autocomplete="username"
+                required
+            />
+        </label>
+
+        <label class="w-100">
+            <input
+                type="password"
+                name="senha"
+                id="password"
+                class="form-control py-2"
+                placeholder="senha"
+                autocomplete="current-password"
+                required
+            />
+
+            <span class="btn-showPass" data-bs-toggle="tooltip" data-bs-title="mostrar/esconder senha">
+                <i class="bi bi-lock"></i>
+            </span>
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 py-2 mb-3">Entrar</button>
+
+    <a class="d-flex align-items-center justify-content-center text-muted py-2" href="#">
+        <small>Esqueceu a senha?</small>
+    </a>
+</form>
+
+<script is:inline src="/assets/vendor/showAllPassword.js"></script>

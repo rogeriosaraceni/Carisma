@@ -1,0 +1,40 @@
+/* ////////////////////////////////////////////////////////////////////
+variables default
+class text color
+class bg color
+
+//////////////////////////////////////////////////////////////////// */
+
+/* --------------------------------------------------------------------
+* - variables default
+* -------------------------------------------------------------------- */
+:root {
+    --color-green:  #16937a;
+    --color-orange: #e86a28;
+    --color-yellow: #e7e632;
+    --color-red:    #e4141b;
+    --color-blue:   #1969af;
+    --color-grey:   #aaaaaa;
+
+    --bg-input-form: rgba(247, 247, 193, 0.15);
+}
+
+/* --------------------------------------------------------------------
+* - class text color
+---------------------------------------------------------------------- */
+.text-green { color: var(--color-green)!important}
+.text-orange{ color: var(--color-orange)!important}
+.text-yellow{ color: var(--color-yellow)!important}
+.text-red   { color: var(--color-red)!important}
+.text-blue  { color: var(--color-blue)!important}
+.text-grey  { color: var(--color-grey)!important}
+
+/* --------------------------------------------------------------------
+* - class bg color
+---------------------------------------------------------------------- */
+.bg-green { background-color: var(--color-green)!important}
+.bg-orange{ background-color: var(--color-orange)!important}
+.bg-yellow{ background-color: var(--color-yellow)!important}
+.bg-red   { background-color: var(--color-red)!important}
+.bg-blue  { background-color: var(--color-blue)!important}
+.bg-grey  { background-color: var(--color-grey)!important}

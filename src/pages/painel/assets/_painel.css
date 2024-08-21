@@ -1,0 +1,57 @@
+.wraper-app{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgb(14, 131, 177);
+}
+.grid-main {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-template-rows: 100px 1fr 50px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+}
+
+/* https://coderthemes.com/hyper_2/saas/index.html */
+
+.item-nav {
+    /* LineInit: 1 / ColInit: 1 / LineFinal: 2 / ColFinal: 3 */
+    grid-area: 1 / 1 / 2 / 3;
+    background-color: black;
+
+    position: sticky;
+    top: 0;
+}
+
+.item-sidebar {
+    /* LineInit: 2 / ColInit: 1 / LineFinal: 4 / ColFinal: 2 */
+    grid-area: 2 / 1 / 4 / 2;
+    background-color: rebeccapurple;
+
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.item-content {
+    /* LineInit: 2 / ColInit: 2 / LineFinal: 3 / ColFinal: 3 */
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: forestgreen;
+
+    padding-top:20px;
+}
+
+.item-footer  {
+    /* LineInit: 3 / ColInit: 2 / LineFinal: 4 / ColFinal: 3 */
+    grid-area: 3 / 2 / 4 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    background-color: tomato;
+}

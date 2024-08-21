@@ -1,0 +1,21 @@
+{
+    "name": "Consultoria",
+    "short_name": "Consultoria",
+
+    "icons": [
+        {
+            "src": "android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "theme_color": "#003057",
+    "background_color": "#eff1f4",
+    "display": "standalone"
+}

@@ -1,0 +1,26 @@
+---
+import './assets/_login.css'
+
+import Head from '@includes/Head.astro';
+import ContentLogo from "./_content-logo.astro";
+import ContentForm from "./_content-form.astro";
+import ContentFooter from "../login2/_content-footer.astro";
+---
+<!doctype html>
+<html lang="pt-br">
+  <Head />
+
+<body class="body-login">
+    <main class="card container-login slide-in-left">
+        <div class="card-body">
+            <ContentLogo />
+
+            <h4>
+                <i class="bi bi-shield-lock"></i> Login
+            </h4>
+
+            <ContentForm />
+            <ContentFooter />
+        </div>
+    </main>
+</body>

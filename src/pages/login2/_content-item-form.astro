@@ -1,0 +1,55 @@
+---
+import ContentFooter from "./_content-footer.astro";
+---
+<div class="item item-form">
+    <div class="slide-in-left">
+        <div class="content-form">
+            <div class="mb-4">
+                <h2>
+                    <i class="bi bi-shield-lock"></i> Login Carisma ADM
+                </h2>
+                <p>Entre com seu e-mail e senha</p>
+            </div>
+
+            <form method="" action="/painel/">
+                <div class="mb-4">
+                    <label class="w-100">
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="form-control py-2"
+                            placeholder="e-mail"
+                            autocomplete="username"
+                            required
+                        />
+                    </label>
+
+                    <label class="w-100">
+                        <input
+                            type="password"
+                            name="senha"
+                            id="password"
+                            class="form-control py-2"
+                            placeholder="senha"
+                            autocomplete="current-password"
+                            required
+                        />
+
+                        <span class="btn-showPass" data-bs-toggle="tooltip" data-bs-title="mostrar/esconder senha">
+                            <i class="bi bi-lock"></i>
+                        </span>
+                    </label>
+                </div>
+
+                <a class="d-block text-muted small py-2 mb-3" href="#">Esqueceu a senha?</a>
+
+                <button type="submit" class="btn btn-primary w-100 py-2">Entrar</button>
+            </form>
+        </div>
+
+        <ContentFooter />
+    </div>
+</div>
+
+<script is:inline src="/assets/vendor/showAllPassword.js"></script>

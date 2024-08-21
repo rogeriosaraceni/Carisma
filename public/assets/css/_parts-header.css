@@ -1,0 +1,39 @@
+
+/* --------------------------------------------------------------------
+* - header-app
+---------------------------------------------------------------------- */
+.page-header {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--color-wep-azul-meia-noite)!important;
+}
+.page-header .page-header-content{
+    display: flex;
+    align-items: center;
+}
+.page-header .page-header-content .item-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #fff;
+    font-size: 1.2rem;
+    color: var(--color-wep-azul-meia-noite)!important;
+}
+.page-header .page-header-content .item-title{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+@media (max-width: 992px){
+    .page-header .page-header-content .item-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+    }
+    .page-header .page-header-content .item-title{ font-size: 1.1rem;}
+}
