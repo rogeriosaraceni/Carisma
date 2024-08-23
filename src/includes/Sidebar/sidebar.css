@@ -91,7 +91,7 @@
 .navSidebarApp .nav-item { width: 100%;}
 
 /* --------------------------------------------------------------------
-* - navSidebarApp .nav-link
+* - .nav-link
 ---------------------------------------------------------------------- */
 .navSidebarApp .nav-item.sidebarHeader {
     color: #ced4da;
@@ -136,20 +136,19 @@
     font-size: 0.75rem;
     transition: all 150ms ease-in;
 }
-
-.navSidebarApp .nav-item .nav-link[data-bs-toggle="collapse"][aria-expanded="true"] {
-    color: var(--navlink-color-sidebar-active);
-}
 .navSidebarApp .nav-item .nav-link[data-bs-toggle="collapse"][aria-expanded="true"] .arrow{
     transform: rotate(180deg);
 }
 
 /* --------------------------------------------------------------------
-* - navSidebarApp .sub-menu (Level 2)
+* - .sub-menu (Level 2)
 ---------------------------------------------------------------------- */
 .navSidebarApp .sub-menu .nav-item .nav-link {
     padding: 0.5rem 0.5rem;
     font-size: 0.8rem;
+}
+.navSidebarApp .sub-menu .nav-item .nav-link:hover {
+    color: var(--navlink-color-sidebar-hover);
 }
 .navSidebarApp .sub-menu .nav-item .nav-link .name{
     white-space: nowrap;
@@ -159,21 +158,16 @@
 }
 
 /* --------------------------------------------------------------------
-* - navSidebarApp links active
+* - links active
 ---------------------------------------------------------------------- */
-
 ul.navSidebarApp ul.sub-menu li.nav-item a.nav-link {
     padding-left: 0;
     font-size: 0.8rem;
     color: var(--navlink-color-sidebar);
 }
-
 ul.navSidebarApp li.nav-item.active a.nav-link {
     color: var(--navlink-color-sidebar-active);
 }
-
-
-
 ul.navSidebarApp ul.sub-menu li.nav-item.active a.nav-link {
     color: var(--navlink-color-sidebar-active);
 }
