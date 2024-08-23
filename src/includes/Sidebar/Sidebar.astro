@@ -12,6 +12,7 @@ import "./sidebar.css";
     <section class="contentSidebarApp">
         <ul class="nav navSidebarApp">
             <li class="nav-item sidebarHeader">Navegação</li>
+
             <li class="nav-item">
                 <a class="nav-link" href="/painel/">
                     <span class="icon-img">
@@ -21,6 +22,7 @@ import "./sidebar.css";
                 </a>
             </li>
 
+            <!-- Media Center inicio -->
             <li class="nav-item">
                 <a class="nav-link dropdown" data-bs-toggle="collapse" aria-expanded="false" href="#navCollapseMediaCenter">
                     <span class="icon-img">
@@ -50,10 +52,7 @@ import "./sidebar.css";
                     </ul>
                 </div>
             </li>
+            <!-- Media Center fim -->
         </ul>
     </section>
 </aside>
-
-<script is:inline>
-    const ps = new PerfectScrollbar('.contentSidebarApp');
-</script>

@@ -21,13 +21,13 @@
 * - sidebar-app
 ---------------------------------------------------------------------- */
 .sidebarApp {
-    z-index: 999;
+    z-index: 9999;
     position: fixed;
     top: 0;
     left: 0;
     width: var(--width-sidebar);
     background-color: var(--bg-color-sidebar);
-    transition: width 0.35s ease-in-out;
+    transition: all 0.3s;
 }
 
 .contentRightApp{
@@ -109,6 +109,7 @@
     color: var(--navlink-color-sidebar);
     transition: all 0.3s;
 }
+
 .navSidebarApp .nav-item .nav-link:hover {
     color: var(--navlink-color-sidebar-hover);
 }
@@ -135,29 +136,12 @@
     font-size: 0.75rem;
     transition: all 150ms ease-in;
 }
-.navSidebarApp .nav-item .nav-link[data-bs-toggle="collapse"][aria-expanded="true"] .arrow{
-    transform: rotate(180deg);
-}
-.navSidebarApp .nav-item .nav-link[data-bs-toggle="collapse"][aria-expanded="true"]{
-    color: var(--navlink-color-sidebar-hover);
-}
 
-/* --------------------------------------------------------------------
-* - navSidebarApp .nav-link active
----------------------------------------------------------------------- */
-.navSidebarApp .nav-item .nav-link.active{
+.navSidebarApp .nav-item .nav-link[data-bs-toggle="collapse"][aria-expanded="true"] {
     color: var(--navlink-color-sidebar-active);
 }
-.navSidebarApp .nav-item .nav-link.active::after {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    content: "";
-    opacity: 1;
-    position: absolute;
-    transform: scaleY(1);
-    transition: transform .15s cubic-bezier(.645,.045,.355,1),opacity .15s cubic-bezier(.645,.045,.355,1);
-    border-right: 4px solid var(--navlink-color-sidebar-active);
+.navSidebarApp .nav-item .nav-link[data-bs-toggle="collapse"][aria-expanded="true"] .arrow{
+    transform: rotate(180deg);
 }
 
 /* --------------------------------------------------------------------
@@ -177,13 +161,19 @@
 /* --------------------------------------------------------------------
 * - navSidebarApp links active
 ---------------------------------------------------------------------- */
-.navSidebarApp .nav-item.active .nav-link{
-    color: var(--navlink-color-sidebar-active);
-}
-.navSidebarApp .sub-menu .nav-item.active .nav-link {
-    color: var(--navlink-color-sidebar-active);
-}
-.navSidebarApp .nav-item .nav-link[data-toggle="collapse"][aria-expanded="true"] {
-    color: var(--navlink-color-sidebar-hover);
+
+ul.navSidebarApp ul.sub-menu li.nav-item a.nav-link {
+    padding-left: 0;
+    font-size: 0.8rem;
+    color: var(--navlink-color-sidebar);
 }
 
+ul.navSidebarApp li.nav-item.active a.nav-link {
+    color: var(--navlink-color-sidebar-active);
+}
+
+
+
+ul.navSidebarApp ul.sub-menu li.nav-item.active a.nav-link {
+    color: var(--navlink-color-sidebar-active);
+}
