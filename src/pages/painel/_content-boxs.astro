@@ -1,0 +1,97 @@
+<section class="row">
+    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+        <article class="card illustration flex-fill">
+            <div class="card-body p-0 d-flex flex-fill">
+                <div class="row g-0 w-100">
+                    <div class="col-7">
+                        <div class="illustration-text p-3 m-1">
+                            <h5 class="illustration-text">Bem-vindo de volta, <span>Luciano</span>!</h5>
+                            <p class="mb-0 small">App Carisma ADM</p>
+                        </div>
+                    </div>
+
+                    <div class="col-5 align-self-end text-end">
+                        <img src="https://appstack.bootlab.io/img/illustrations/customer-support.png" alt="Customer Support" class="img-fluid illustration-img">
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+        <article class="card flex-fill">
+            <div class="card-body py-4">
+                <div class="d-flex align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="mb-3">Usúario Logado</h5>
+                        <p class="mb-2 small text-secondary">Administrador Geral</p>
+                    </div>
+
+                    <div class="d-inline-block ms-3">
+                        <i class="bi bi-person-check fs-1 lh-1 text-success"></i>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+        <article class="card flex-fill">
+            <div class="card-body py-4">
+                <div class="d-flex align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="mb-3">Número de IP</h5>
+                        <p class="mb-2 small text-secondary" id="ip"></p>
+                    </div>
+
+                    <div class="d-inline-block ms-3">
+                        <i class="bi bi-geo-alt fs-1 lh-1 illustration-text"></i>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+        <article class="card flex-fill">
+            <div class="card-body py-4">
+                <div class="d-flex align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="mb-3">Site Carisma</h5>
+                        <p class="mb-2 small text-secondary">
+                            <a href="https://carisma.com.br/" target="_blank">Carisma</a>
+                        </p>
+                    </div>
+
+                    <div class="d-inline-block ms-3">
+                        <i class="bi bi-globe fs-1 lh-1 text-warning"></i>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<style is:inline>
+.illustration {
+    background: #e0eafc;
+    color: #3f80ea;
+}
+.illustration-text {
+    color: #3f80ea;
+}
+.illustration-img {
+    max-width: 180px;
+    width: 100%;
+}
+</style>
+
+
+<script is:inline>
+    $(document).ready(function() {
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            $("#ip").text(data.ip);
+
+        });
+    });
+</script>
