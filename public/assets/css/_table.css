@@ -23,8 +23,7 @@ table>thead>tr>th / table>tfoot>tr>th
     font-weight: 400;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
-    color: #fff;
-    background: var(--color-wep-azul-meia-noite);
+    background: #faf6f6!important
 }
 
 .table>thead>tr>th,

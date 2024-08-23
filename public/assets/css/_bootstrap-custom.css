@@ -3,7 +3,7 @@ app variables
 breadcrumb-app
 btn
 card / cadr-body
-container-fluid
+container
 modal
 nav-tabs
 page-item .active/disabled
@@ -59,14 +59,18 @@ btn
 * - card / cadr-body
 ---------------------------------------------------------------------- */
 .card {
-    --bs-card-spacer-y: 0.5rem;
-    --bs-card-spacer-x: 0.5rem;
-    --bs-card-border-radius: 0.75rem;
+    /* --bs-card-spacer-y: 0.5rem;
+    --bs-card-spacer-x: 0.5rem; */
+    --bs-card-border-radius: 0.25rem;
     margin-right: 0 !important;
     margin-left: 0 !important;
     margin-bottom: 1rem;
     border: 0;
-    box-shadow: 0px 2px 1px -2px rgb(0 0 0 / 4%), 0px 1px 1px 0px rgb(0 0 0 / 4%), 0px 1px 5px 0px rgb(0 0 0 / 4%) !important;
+    box-shadow: 0 0 .875rem 0 rgba(41, 48, 66, .05);
+}
+.card-title{
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
     .body-popup .card{
@@ -76,8 +80,11 @@ btn
 }
 
 /* --------------------------------------------------------------------
-* - container-fluid
+* - containers
 ---------------------------------------------------------------------- */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 2.5rem;
+}
 .container-fluid{
     max-width: 1920px;
 }

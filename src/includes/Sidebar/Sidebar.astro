@@ -1,0 +1,59 @@
+---
+import "./sidebar.css";
+---
+
+<script src="./sidebar.js"></script>
+
+<aside class="sidebarApp">
+    <a class="nav-brand" href="/painel/">
+        <img class="img-fluid" src="/assets/images/logo-white.svg"/>
+    </a>
+
+    <section class="contentSidebarApp">
+        <ul class="nav navSidebarApp">
+            <li class="nav-item sidebarHeader">Navegação</li>
+            <li class="nav-item">
+                <a class="nav-link" href="/painel/">
+                    <span class="icon-img">
+                        <i class="bi bi-columns"></i>
+                    </span>
+                    <span class="name">Painel de Controle</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link dropdown" data-bs-toggle="collapse" aria-expanded="false" href="#navCollapseMediaCenter">
+                    <span class="icon-img">
+                        <i class="bi bi-youtube"></i>
+                    </span>
+                    <span class="name">Media Center</span>
+                    <i class="bi bi-chevron-down arrow"></i>
+                </a>
+
+                <div class="collapse" id="navCollapseMediaCenter">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/media-center/audios/">
+                                <span class="name">Áudios</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/media-center/videos/">
+                                <span class="name">Vídeos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/media-center/links/">
+                                <span class="name">Links para Compartilhar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+</aside>
+
+<script is:inline>
+    const ps = new PerfectScrollbar('.contentSidebarApp');
+</script>

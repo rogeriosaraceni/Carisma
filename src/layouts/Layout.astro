@@ -1,5 +1,8 @@
 ---
 import Head from '@includes/Head.astro';
+import Sidebar from '@includes/Sidebar/Sidebar.astro';
+import Nav from '@includes/Nav.astro';
+import Footer from '@includes/Footer.astro';
 ---
 
 <!doctype html>
@@ -7,10 +10,38 @@ import Head from '@includes/Head.astro';
 	<Head />
 
 	<body>
-		<slot />
+        <div id="wrapperApp">
+            <Sidebar/>
+
+            <main class="mainContentApp contentRightApp">
+                <Nav/>
+                <main class="mainPage">
+                    <div class="container-fluid">
+                        <slot />
+                    </div>
+                </main>
+                <Footer/>
+            </main>
+        </div>
 	</body>
 </html>
 
 <style is:global>
-
+    #wrapperApp {
+        align-items: stretch;
+        display: flex;
+        width: 100%;
+    }
+    .mainContentApp {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-width: 0;
+        width: 100%;
+        transition: all 0.3s;
+    }
+    .mainPage{
+        flex: 1;
+        padding: 1rem 0;
+    }
 </style>

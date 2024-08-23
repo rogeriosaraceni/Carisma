@@ -1,8 +1,98 @@
 ---
 ---
 
-<nav class="item-nav">Nav</nav>
+<style>
+    .navbarApp {
+        z-index: 999;
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        padding: 1rem 0;
+        border-bottom: 0;
+        box-shadow: 0 0 2rem 0 rgba(41, 48, 66, .1);
+    }
 
-<style is:inline>
+    /* --------------------------------------------------------------------
+    * - toogle-sidebar
+    ---------------------------------------------------------------------- */
+    #btnToogleSidebar{
+        position: relative;
+        margin-right: 1rem;
+        cursor: pointer;
+        display: flex;
+        height: 26px;
+        width: 26px;
 
+    }
+    .hamburger {
+        position: relative;
+    }
+    .hamburger, .hamburger:after, .hamburger:before {
+        background: var(--bs-body-color);
+        border-radius: 1px;
+        content: "";
+        cursor: pointer;
+        display: block;
+        height: 3px;
+        transition: background .1s ease-in-out, color .1s ease-in-out;
+        width: 24px;
+    }
+    .hamburger:before {
+        position: absolute;
+        top: -8px;
+        width: 20px;
+    }
+    .hamburger:after {
+        bottom: -8px;
+        position: absolute;
+        width: 16px;
+    }
 </style>
+
+<nav class="navbarApp navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a id="btnToogleSidebar">
+            <i class="hamburger align-self-center"></i>
+        </a>
+
+        <div class="navbar-nav nav-theme-user">
+            <li class="nav-item dropdown">
+                <button
+                    class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-animation2 gap-1 px-1"
+                    aria-label="setup"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
+                    <i class="bi bi-person-circle fs-5"></i>
+
+                    <div class="d-flex flex-column align-items-start">
+                        <small class="lh-1" id="user-name">Luciano</small>
+                        <small class="lh-1" id="user-email">luciano@carisma.com.br</small>
+                        <small class="lh-1" id="user-cargo">Administrador</small>
+                    </div>
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end overflow-hidden border-0 py-0 shadow">
+                    <li>
+                        <a class="dropdown-item" aria-label="perfil" data-fancybox="" data-type="iframe" data-width="600" data-height="90%" href="/pages/setup/perfil/">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-person-fill-gear fs-5"></i>
+                                <span class="ms-2 small">Alterar Senha</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" aria-label="login" href="/login/">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-box-arrow-right fs-5"></i>
+                                <span class="ms-2 small">Sair</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+    </div>
+</nav>
