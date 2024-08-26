@@ -152,3 +152,14 @@ title-breadcrumb
     background-image: linear-gradient(195deg,#747b8a,#495361);
 }
 
+
+
+[data-bs-theme=dark] {
+    --bs-body-bg: #293042;
+
+    body{ background-color: #202634;}
+    .navbarApp,
+    .footerApp{
+        background-color: #1a1f2c !important;
+    }
+}

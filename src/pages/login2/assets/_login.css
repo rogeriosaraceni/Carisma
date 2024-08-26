@@ -91,3 +91,9 @@ body{
 @media screen and (max-device-width: 1377px){
 
 }
+
+[data-bs-theme=dark] {
+    .wrapper-login .item-form{
+        background-color: #202634;
+    }
+}

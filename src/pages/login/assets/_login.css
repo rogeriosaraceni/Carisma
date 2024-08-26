@@ -82,3 +82,9 @@ body.body-login::after {
 @media screen and (max-device-width: 1377px){
 
 }
+
+[data-bs-theme=dark] {
+    .container-login{
+        background-color: #202634;
+    }
+}

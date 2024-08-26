@@ -10,6 +10,13 @@ dataTables-custom - page-link
 
 //////////////////////////////////////////////////////////////////// */
 
+.table{
+    --bg-thead: #faf6f6
+}
+[data-bs-theme=dark] .table {
+    --bg-thead: #202634;
+}
+
 /* --------------------------------------------------------------------
 table>thead>tr>th / table>tfoot>tr>th
 -------------------------------------------------------------------- */
@@ -23,7 +30,7 @@ table>thead>tr>th / table>tfoot>tr>th
     font-weight: 400;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
-    background: #faf6f6!important
+    background: var(--bg-thead);
 }
 
 .table>thead>tr>th,
@@ -36,13 +43,6 @@ table>thead>tr>th / table>tfoot>tr>th
     vertical-align: middle;
     border-color: var(--bs-border-color);
 }
-
-.table.table-borderless>thead>tr>th,
-.table.table-borderless>tfoot>tr>th {
-	color: var(--color-wep-azul-meia-noite);
-	background: #fff;
-}
-
 .table-hover tbody tr:hover {
 	color: #212529;
 	background-color: rgba(0, 0, 0, .030);
@@ -67,7 +67,6 @@ dataTables-custom - dataTable / tbody
 -------------------------------------------------------------------- */
 table.table.dataTable th  {
     text-align: center;
-    background-color: var(--color-wep-azul-meia-noite);
 }
 
 /* corrigi bug barra de rolagem com bootstrap */
