@@ -5,6 +5,7 @@ link
 scrollbar
 title-breadcrumb
 popover-app
+charts
 
 complementary classes
 //////////////////////////////////////////////////////////////////// */
@@ -29,8 +30,6 @@ body{
     padding: 1rem;
     height: auto;
 }
-
-
 
 /* --------------------------------------------------------------------
 btns
@@ -127,6 +126,18 @@ title-breadcrumb
 }
 
 /* --------------------------------------------------------------------
+* - charts
+---------------------------------------------------------------------- */
+.overflow-auto-charts{
+    overflow-x: auto;
+    width: 100%;
+}
+.overflow-auto-charts .box-charts{
+    display: inline-block;
+    min-width: 100%;
+}
+
+/* --------------------------------------------------------------------
 * - complementary classes
 ---------------------------------------------------------------------- */
 .bg-shadow-opacity {
@@ -140,3 +151,4 @@ title-breadcrumb
 .bg-gradient-secondary {
     background-image: linear-gradient(195deg,#747b8a,#495361);
 }
+

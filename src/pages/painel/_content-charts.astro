@@ -1,0 +1,220 @@
+<div class="row slide-in-right">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">Acessos Semanal</div>
+
+                <div class="overflow-auto-charts">
+                    <div class="box-charts" id="chartdiv-acesso-semana" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">Acessos Mensal</div>
+
+                <div class="overflow-auto-charts">
+                    <div class="box-charts" id="chartdiv-acesso-mensal" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
+
+        var chart = am4core.create("chartdiv-acesso-semana", am4charts.XYChart);
+
+        // Disable amChart Logo
+        if (chart.logo) {
+            chart.logo.disabled = true;
+        }
+        chart.maskBullets = false;
+        chart.padding(10, 0, 0, 0);
+
+        // Add data
+        chart.data = [
+            { category: "Seg", value: 17 },
+            { category: "Ter", value: 14 },
+            { category: "Qua", value: 16 },
+            { category: "Qui", value: 26 },
+            { category: "Sex", value: 17 },
+            { category: "Sab", value: 12 },
+            { category: "Dom", value: 6 },
+        ];
+
+        // Ordenar os dados do gráfico do maior para o menor
+        // chart.data.sort(function(a, b) {
+        //     return b.value - a.value;
+        // });
+
+        // Create axes
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "category";
+        categoryAxis.renderer.grid.template.location = 0;
+        categoryAxis.renderer.minGridDistance = 10;
+        categoryAxis.renderer.grid.template.disabled = true;
+        categoryAxis.renderer.labels.template.horizontalCenter = "middle";
+        categoryAxis.renderer.labels.template.verticalCenter = "middle";
+        categoryAxis.renderer.labels.template.rotation = 0;
+        categoryAxis.renderer.labels.template.fontSize = 11;
+        categoryAxis.renderer.labels.template.maxWidth = 320; // Limitar a largura máxima dos rótulos
+        categoryAxis.renderer.labels.template.wrap = true; // Ativar quebra automática de linha
+        categoryAxis.renderer.labels.template.lineHeight = 0.8; // Ajustar a altura da linha
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.renderer.grid.template.disabled = true;
+        valueAxis.renderer.labels.template.disabled = true;
+
+        // Create series
+        var series = chart.series.push(new am4charts.ColumnSeries());
+        series.dataFields.valueY = "value";
+        series.dataFields.categoryX = "category";
+        series.name = "value";
+        series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}";
+        series.columns.template.fillOpacity = 0.8;
+        series.columns.template.strokeWidth = 0;
+
+        series.columns.template.column.cornerRadiusTopLeft = 10;
+        series.columns.template.column.cornerRadiusTopRight = 10;
+        series.columns.template.column.fillOpacity = 0.8;
+        series.columns.template.width = 20;
+        //series.columns.template.fill = am4core.color("#4F81BD");
+
+        var bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.interactionsEnabled = false;
+        bullet.dy = -5;
+        bullet.fontSize = 11;
+        bullet.label.text = "{valueY}";
+        bullet.label.fill = am4core.color("#000");
+
+        //colors
+        series.columns.template.adapter.add("fill", function (fill, target) {
+            return chart.colors.getIndex(target.dataItem.index);
+        });
+
+        // Após definir os dados do gráfico
+        chart.events.on("datavalidated", function() {
+            var categoryCount = chart.data.length;
+            var minGridDistance = categoryAxis.renderer.minGridDistance;
+            var columnWidth = series.columns.template.width;
+
+            // Verifique se columnWidth é uma porcentagem, e ajuste se necessário
+            if (typeof columnWidth === "number") {
+                columnWidth = columnWidth;
+            } else if (typeof columnWidth === "string" && columnWidth.includes("%")) {
+                columnWidth = parseFloat(columnWidth) / 100 * chart.pixelWidth;
+            } else {
+                columnWidth = 30; // Default column width
+            }
+
+            // Defina a largura do gráfico com base no número de categorias
+            var chartWidth = categoryCount * (minGridDistance + columnWidth);
+            document.getElementById('chartdiv-acesso-semana').style.width = chartWidth + 'px';
+        });
+    });
+
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
+
+        var chart = am4core.create("chartdiv-acesso-mensal", am4charts.XYChart);
+
+        // Disable amChart Logo
+        if (chart.logo) {
+            chart.logo.disabled = true;
+        }
+        chart.maskBullets = false;
+        chart.padding(10, 0, 0, 0);
+
+        // Add data
+        chart.data = [
+            { category: "Jan", value: 45 },
+            { category: "Fev", value: 120 },
+            { category: "Mar", value: 75 },
+            { category: "Abr", value: 30 },
+            { category: "Mai", value: 90 },
+            { category: "Jun", value: 150 },
+            { category: "Jul", value: 110 },
+            { category: "Ago", value: 65 },
+            { category: "Set", value: 25 },
+            { category: "Out", value: 140 },
+            { category: "Nov", value: 55 },
+            { category: "Dez", value: 80 },
+        ];
+
+        // Ordenar os dados do gráfico do maior para o menor
+        // chart.data.sort(function(a, b) {
+        //     return b.value - a.value;
+        // });
+
+        // Create axes
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "category";
+        categoryAxis.renderer.grid.template.location = 0;
+        categoryAxis.renderer.minGridDistance = 10;
+        categoryAxis.renderer.grid.template.disabled = true;
+        categoryAxis.renderer.labels.template.horizontalCenter = "middle";
+        categoryAxis.renderer.labels.template.verticalCenter = "middle";
+        categoryAxis.renderer.labels.template.rotation = 0;
+        categoryAxis.renderer.labels.template.fontSize = 11;
+        categoryAxis.renderer.labels.template.maxWidth = 320; // Limitar a largura máxima dos rótulos
+        categoryAxis.renderer.labels.template.wrap = true; // Ativar quebra automática de linha
+        categoryAxis.renderer.labels.template.lineHeight = 0.8; // Ajustar a altura da linha
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.renderer.grid.template.disabled = true;
+        valueAxis.renderer.labels.template.disabled = true;
+
+        // Create series
+        var series = chart.series.push(new am4charts.ColumnSeries());
+        series.dataFields.valueY = "value";
+        series.dataFields.categoryX = "category";
+        series.name = "value";
+        series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}";
+        series.columns.template.fillOpacity = 0.8;
+        series.columns.template.strokeWidth = 0;
+
+        series.columns.template.column.cornerRadiusTopLeft = 10;
+        series.columns.template.column.cornerRadiusTopRight = 10;
+        series.columns.template.column.fillOpacity = 0.8;
+        series.columns.template.width = 20;
+        //series.columns.template.fill = am4core.color("#4F81BD");
+
+        var bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.interactionsEnabled = false;
+        bullet.dy = -5;
+        bullet.fontSize = 11;
+        bullet.label.text = "{valueY}";
+        bullet.label.fill = am4core.color("#000");
+
+        //colors
+        series.columns.template.adapter.add("fill", function (fill, target) {
+            return chart.colors.getIndex(target.dataItem.index);
+        });
+
+        // Após definir os dados do gráfico
+        chart.events.on("datavalidated", function() {
+            var categoryCount = chart.data.length;
+            var minGridDistance = categoryAxis.renderer.minGridDistance;
+            var columnWidth = series.columns.template.width;
+
+            // Verifique se columnWidth é uma porcentagem, e ajuste se necessário
+            if (typeof columnWidth === "number") {
+                columnWidth = columnWidth;
+            } else if (typeof columnWidth === "string" && columnWidth.includes("%")) {
+                columnWidth = parseFloat(columnWidth) / 100 * chart.pixelWidth;
+            } else {
+                columnWidth = 30; // Default column width
+            }
+
+            // Defina a largura do gráfico com base no número de categorias
+            var chartWidth = categoryCount * (minGridDistance + columnWidth);
+            document.getElementById('chartdiv-acesso-mensal').style.width = chartWidth + 'px';
+        });
+    });
+</script>
