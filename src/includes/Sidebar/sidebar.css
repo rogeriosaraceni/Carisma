@@ -4,7 +4,7 @@
 :root{
     /* sidebar sizes */
     --width-sidebar: 260px;
-    --width-sidebarMin: 100px;
+    --width-sidebarMin: 60px;
 
     /* sidebar background */
     --bg-color-sidebar: #293042;
@@ -61,12 +61,22 @@
     padding: 1rem 1rem 1rem 1rem;
 }
 .sidebarApp .nav-brand img{
-    max-width: 130px;
     transition: all 0.3s;
 }
-.sidebarMin .sidebarApp .nav-brand img{
-    max-width: 90px;
+.sidebarApp .nav-brand #logo-sidebar{
+    max-width: 130px;
 }
+.sidebarApp .nav-brand #logo-sidebar-mini{
+    display: none;
+}
+
+.sidebarMin .sidebarApp .nav-brand #logo-sidebar{
+    display: none;
+}
+.sidebarMin .sidebarApp .nav-brand #logo-sidebar-mini{
+    display: block;
+}
+
 
 /* --------------------------------------------------------------------
 * - contentSidebarApp
@@ -93,12 +103,6 @@
 /* --------------------------------------------------------------------
 * - .nav-link
 ---------------------------------------------------------------------- */
-.navSidebarApp .nav-item.sidebarHeader {
-    color: #ced4da;
-    font-size: .75rem;
-    padding: 1rem 0.375rem 0rem 1.4rem;
-}
-
 .navSidebarApp .nav-item .nav-link {
     position: relative;
     display: flex;
