@@ -61,22 +61,12 @@
     padding: 1rem 1rem 1rem 1rem;
 }
 .sidebarApp .nav-brand img{
+    max-width: 130px;
     transition: all 0.3s;
 }
-.sidebarApp .nav-brand #logo-sidebar{
-    max-width: 130px;
+.sidebarMin .sidebarApp .nav-brand img{
+    max-width: 50px;
 }
-.sidebarApp .nav-brand #logo-sidebar-mini{
-    display: none;
-}
-
-.sidebarMin .sidebarApp .nav-brand #logo-sidebar{
-    display: none;
-}
-.sidebarMin .sidebarApp .nav-brand #logo-sidebar-mini{
-    display: block;
-}
-
 
 /* --------------------------------------------------------------------
 * - contentSidebarApp
